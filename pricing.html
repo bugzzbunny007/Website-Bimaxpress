@@ -102,6 +102,430 @@
   <link rel='stylesheet' id='google-fonts-1-css'
     href='../fonts.googleapis.com/css15c8.css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.6.1'
     type='text/css' media='all' />
+
+    <link rel="icon" href="wp-content/uploads/2021/01/logoicon.png" type="image/x-icon">
+  <!-- responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- For IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+  <link rel='dns-prefetch' href='../fonts.googleapis.com/index.html' />
+  <link rel='dns-prefetch' href='../s.w.org/index.html' />
+  <link rel="alternate" type="application/rss+xml" title="BimaXpress &raquo; Feed" href="feed/index.html" />
+  <link rel="alternate" type="application/rss+xml" title="BimaXpress &raquo; Comments Feed"
+      href="comments/feed/index.html" />
+
+  <script type="text/javascript">
+      window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/bimaxpress.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.1" } };
+      !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  body{
+      font-family: 'Itim', cursive;
+  }
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.call-btn {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  bottom: 0px;
+  background: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0;
+  width: 110px;
+  height: 110px;
+  z-index: 1000;
+}
+
+.call-btn .tada {
+  background: red;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  animation-name: tada;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.call-btn .tada a:before {
+  font-family: FontAwesome;
+  content: "\f095";
+  font-size: 25px;
+  
+  text-decoration: none;
+  color: #fff;
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+
+
+@keyframes tada {
+  from {
+      transform: rotate(-20deg);
+  }
+  to {
+      transform: rotate(20deg);
+  }
+}
+
+.call-btn .pulse {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 144, 2, 0.39);
+  ;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+  from {
+      width: 55px;
+      height: 55px;
+      margin-top: -27.5px;
+      margin-left: -27.5px;
+  }
+  to {
+      width: 60px;
+      height: 60px;
+      margin-top: -30px;
+      margin-left: -30px;
+  }
+}
+
+.call-btn .zoomIn {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ff9002;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      margin-left: -20px;
+  }
+  to {
+      width: 80px;
+      height: 80px;
+      margin-top: -40px;
+      margin-left: -40px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .call-btn {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+
+      img.wp-smiley,
+      img.emoji {
+          display: inline !important;
+          border: none !important;
+          box-shadow: none !important;
+          height: 1em !important;
+          width: 1em !important;
+          margin: 0 .07em !important;
+          vertical-align: -0.1em !important;
+          background: none !important;
+          padding: 0 !important;
+}   
+      .social {
+          padding: 17px;
+          font-size: 30px;
+          width: 58px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 50%;
+      }
+
+      .fa:hover {
+
+          background: orange;
+  }
+
+  .fa-facebook {
+          background: #3B5998;
+          color: white;
+  }
+
+  .fa-linkedin {
+          background: #3B5998;
+          color: white;
+  }
+
+  .fa-instagram {
+          background: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+          color: white;
+  }
+
+  .fa-youtube {
+          padding-left: -6px;
+          background: #ff0000;
+          color: white;
+  }
+  
+  .bunny {
+  width:100%;
+  height:20px;
+  text-align:center;
+  }
+
+.modal {
+display: none; /* Hidden by default */
+position: relative; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 30px; /* Location of the box */
+left: 0;
+top: 0;
+width: 70%; /* Full width */
+height: 70%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 70%;
+}
+
+
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+       img.wp-smiley,
+      img.emoji {
+          display: inline !important;
+          border: none !important;
+          box-shadow: none !important;
+          height: 1em !important;
+          width: 1em !important;
+          margin: 0 .07em !important;
+          vertical-align: -0.1em !important;
+          background: none !important;
+          padding: 0 !important;
+      }
+      .social {
+          padding: 17px;
+          font-size: 30px;
+          width: 58px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 50%;
+      }
+
+      .fa:hover {
+
+          background: #ff8c00;
+      }
+
+      .fa-facebook {
+          background: #3B5998;
+          color: white;
+      }
+
+      .fa-linkedin {
+          background: #3B5998;
+          color: white;
+      }
+
+      .fa-instagram {
+          background: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+          color: white;
+      }
+
+      .fa-youtube {
+          padding-left: -6px;
+          background: #ff0000;
+          color: white;
+      }
+      .bunny {
+  width:100%;
+
+  height:20px;
+  text-align:center;
+}
+.box {
+width: 200px;
+height: 100%;
+margin: 0 auto 0;
+-webkit-perspective: 1000;
+-webkit-backface-visibility: hidden;
+background: #fff;
+}
+
+.pulse-button {
+position: relative;
+top: 109%;
+left: 50%;
+margin-left: 10vw;
+margin-top: 1vh;
+display: block;
+width: 59%;
+height: 50px;
+font-size:0.8em;
+font-weight: light;
+font-family: 'Trebuchet MS', sans-serif;
+text-transform: uppercase;
+text-align: center;
+line-height: 50px;
+letter-spacing: -1px;
+color: white;
+border: none;
+border-radius: 70%;
+background: grey;
+cursor: pointer;
+box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+-webkit-animation: pulse 1s infinite;
+}
+
+.pulse-button:hover {
+-webkit-animation: none;
+}
+
+@-webkit-keyframes pulse {
+0% {
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+70% {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+}
+100% {
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+}
+}
+
+
+.bunnycard{
+font-size:1em;
+border-radius:0.9em;
+background-color: #fc6600;
+color:white;
+width:96%; 
+height:70%;
+text-align:center;
+}
+  </style>
+  <script type='text/javascript' id='jquery-core-js-extra'>
+    
+      var topika_data = { "ajaxurl": "https:\/\/bimaxpress.com\/wp-admin\/admin-ajax.php", "nonce": "167ac7e982" };
+
+  </script>
+  <script type='text/javascript' src='wp-includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id='jquery-core-js'></script>
+  <script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2'
+      id='jquery-migrate-js'></script>
+  <script type='text/javascript'
+      src='wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.minb12b.js?ver=3.1.1'
+      id='font-awesome-4-shim-js'></script>
+  <link rel="https://api.w.org/" href="wp-json/index.html" />
+  <link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/14.json" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+  <meta name="generator" content="WordPress 5.6.1" />
+  <link rel="canonical" href="index.html" />
+  <link rel='shortlink' href='index.html' />
+  <link rel="alternate" type="application/json+oembed"
+      href="wp-json/oembed/1.0/embed215e.json?url=https%3A%2F%2Fbimaxpress.com%2F" />
+  <link rel="alternate" type="text/xml+oembed"
+      href="wp-json/oembed/1.0/embedcc0c?url=https%3A%2F%2Fbimaxpress.com%2F&amp;format=xml" />
+  <style type="text/css">
+      .recentcomments a {
+          display: inline !important;
+          padding: 0 !important;
+          margin: 0 !important;
+      }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD8BZLM61T"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-FD8BZLM61T');
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '245646333701020');
+  fbq('track', 'PageView');
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=245646333701020&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
   
 </head>
 

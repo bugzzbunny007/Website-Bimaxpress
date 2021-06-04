@@ -102,6 +102,429 @@
 <link rel='stylesheet' id='google-fonts-1-css'
   href='../fonts.googleapis.com/css15c8.css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.6.1'
   type='text/css' media='all' />
+  <link rel="icon" href="wp-content/uploads/2021/01/logoicon.png" type="image/x-icon">
+  <!-- responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- For IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+  <link rel='dns-prefetch' href='../fonts.googleapis.com/index.html' />
+  <link rel='dns-prefetch' href='../s.w.org/index.html' />
+  <link rel="alternate" type="application/rss+xml" title="BimaXpress &raquo; Feed" href="feed/index.html" />
+  <link rel="alternate" type="application/rss+xml" title="BimaXpress &raquo; Comments Feed"
+      href="comments/feed/index.html" />
+
+  <script type="text/javascript">
+      window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/bimaxpress.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.1" } };
+      !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  body{
+      font-family: 'Itim', cursive;
+  }
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.call-btn {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  bottom: 0px;
+  background: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0;
+  width: 110px;
+  height: 110px;
+  z-index: 1000;
+}
+
+.call-btn .tada {
+  background: red;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  animation-name: tada;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.call-btn .tada a:before {
+  font-family: FontAwesome;
+  content: "\f095";
+  font-size: 25px;
+  
+  text-decoration: none;
+  color: #fff;
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+
+
+@keyframes tada {
+  from {
+      transform: rotate(-20deg);
+  }
+  to {
+      transform: rotate(20deg);
+  }
+}
+
+.call-btn .pulse {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 144, 2, 0.39);
+  ;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  animation-name: pulse;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+  from {
+      width: 55px;
+      height: 55px;
+      margin-top: -27.5px;
+      margin-left: -27.5px;
+  }
+  to {
+      width: 60px;
+      height: 60px;
+      margin-top: -30px;
+      margin-left: -30px;
+  }
+}
+
+.call-btn .zoomIn {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ff9002;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      margin-left: -20px;
+  }
+  to {
+      width: 80px;
+      height: 80px;
+      margin-top: -40px;
+      margin-left: -40px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .call-btn {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+
+      img.wp-smiley,
+      img.emoji {
+          display: inline !important;
+          border: none !important;
+          box-shadow: none !important;
+          height: 1em !important;
+          width: 1em !important;
+          margin: 0 .07em !important;
+          vertical-align: -0.1em !important;
+          background: none !important;
+          padding: 0 !important;
+}   
+      .social {
+          padding: 17px;
+          font-size: 30px;
+          width: 58px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 50%;
+      }
+
+      .fa:hover {
+
+          background: orange;
+  }
+
+  .fa-facebook {
+          background: #3B5998;
+          color: white;
+  }
+
+  .fa-linkedin {
+          background: #3B5998;
+          color: white;
+  }
+
+  .fa-instagram {
+          background: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+          color: white;
+  }
+
+  .fa-youtube {
+          padding-left: -6px;
+          background: #ff0000;
+          color: white;
+  }
+  
+  .bunny {
+  width:100%;
+  height:20px;
+  text-align:center;
+  }
+
+.modal {
+display: none; /* Hidden by default */
+position: relative; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 30px; /* Location of the box */
+left: 0;
+top: 0;
+width: 70%; /* Full width */
+height: 70%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 70%;
+}
+
+
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+       img.wp-smiley,
+      img.emoji {
+          display: inline !important;
+          border: none !important;
+          box-shadow: none !important;
+          height: 1em !important;
+          width: 1em !important;
+          margin: 0 .07em !important;
+          vertical-align: -0.1em !important;
+          background: none !important;
+          padding: 0 !important;
+      }
+      .social {
+          padding: 17px;
+          font-size: 30px;
+          width: 58px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 50%;
+      }
+
+      .fa:hover {
+
+          background: #ff8c00;
+      }
+
+      .fa-facebook {
+          background: #3B5998;
+          color: white;
+      }
+
+      .fa-linkedin {
+          background: #3B5998;
+          color: white;
+      }
+
+      .fa-instagram {
+          background: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+          color: white;
+      }
+
+      .fa-youtube {
+          padding-left: -6px;
+          background: #ff0000;
+          color: white;
+      }
+      .bunny {
+  width:100%;
+
+  height:20px;
+  text-align:center;
+}
+.box {
+width: 200px;
+height: 100%;
+margin: 0 auto 0;
+-webkit-perspective: 1000;
+-webkit-backface-visibility: hidden;
+background: #fff;
+}
+
+.pulse-button {
+position: relative;
+top: 109%;
+left: 50%;
+margin-left: 10vw;
+margin-top: 1vh;
+display: block;
+width: 59%;
+height: 50px;
+font-size:0.8em;
+font-weight: light;
+font-family: 'Trebuchet MS', sans-serif;
+text-transform: uppercase;
+text-align: center;
+line-height: 50px;
+letter-spacing: -1px;
+color: white;
+border: none;
+border-radius: 70%;
+background: grey;
+cursor: pointer;
+box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+-webkit-animation: pulse 1s infinite;
+}
+
+.pulse-button:hover {
+-webkit-animation: none;
+}
+
+@-webkit-keyframes pulse {
+0% {
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+70% {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+}
+100% {
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+}
+}
+
+
+.bunnycard{
+font-size:1em;
+border-radius:0.9em;
+background-color: #fc6600;
+color:white;
+width:96%; 
+height:70%;
+text-align:center;
+}
+  </style>
+  <script type='text/javascript' id='jquery-core-js-extra'>
+    
+      var topika_data = { "ajaxurl": "https:\/\/bimaxpress.com\/wp-admin\/admin-ajax.php", "nonce": "167ac7e982" };
+
+  </script>
+  <script type='text/javascript' src='wp-includes/js/jquery/jquery.min9d52.js?ver=3.5.1' id='jquery-core-js'></script>
+  <script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2'
+      id='jquery-migrate-js'></script>
+  <script type='text/javascript'
+      src='wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.minb12b.js?ver=3.1.1'
+      id='font-awesome-4-shim-js'></script>
+  <link rel="https://api.w.org/" href="wp-json/index.html" />
+  <link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/14.json" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+  <meta name="generator" content="WordPress 5.6.1" />
+  <link rel="canonical" href="index.html" />
+  <link rel='shortlink' href='index.html' />
+  <link rel="alternate" type="application/json+oembed"
+      href="wp-json/oembed/1.0/embed215e.json?url=https%3A%2F%2Fbimaxpress.com%2F" />
+  <link rel="alternate" type="text/xml+oembed"
+      href="wp-json/oembed/1.0/embedcc0c?url=https%3A%2F%2Fbimaxpress.com%2F&amp;format=xml" />
+  <style type="text/css">
+      .recentcomments a {
+          display: inline !important;
+          padding: 0 !important;
+          margin: 0 !important;
+      }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD8BZLM61T"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-FD8BZLM61T');
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '245646333701020');
+  fbq('track', 'PageView');
+
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=245646333701020&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 </head>
 
 <body>
@@ -139,39 +562,38 @@
         <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1"  data-aos="fade-up">
           <div>
             <h1>Creating a Better Health Care Experience </h1>
-            <h6><p>Bimaxpress gives people and hospital the power to process their Health Insurance Claim through their mobile and our platform to get maximum claims from their Health Insurance policy. To know more submit the form </p></h2>
+            <h6><p>BimaXpress gives people and hospital the power to process their Health Insurance Claim through their mobile and our platform to get maximum claims from their Health Insurance policy. To know more submit the form </p></h2>
+              <br>
               <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> App Demo</a>
             <!-- <a href="#" class="download-btn"><i class="bx bxl-apple"></i> App Store</a> -->
           </div>
         </div>
         <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" style="padding-left: 60px;" data-aos="fade-up">
        <div class="container1">
-       
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
+
+          <form action="http://www.bimaxpress.com.s3-website.ap-south-1.amazonaws.com/" autocomplete="off" method="post" name="google-sheet" role="form" class="php-email-form"  data-aos="fade-up">
             <h2>Send us a message</h2>
             <div class="form-group">
-              <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input placeholder="Your Name" type="Name" name="Name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <input placeholder="Your Email" type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+              <input placeholder="Your Email" type="Email" class="form-control" name="Email" id="email" data-rule="email" data-msg="Please enter a valid email" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input placeholder="Subject" type="Sub" class="form-control" name="Subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validate"></div>
             </div>
             <div class="form-group">
-              <textarea placeholder="Message" class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+              <textarea placeholder="Message" type="Message" class="form-control" name="Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
               <div class="validate"></div>
             </div>
-          
-           <button type="submit">
-            <a href="#" class="download-btn1">Submit</a></button>
+
+            <button input type="submit" class="download-btn1" placeholder="Submit">Submit</button>
           </form>
        </div>
-        
-       
+
         </div>
         </div>
       </div>
@@ -187,11 +609,11 @@
     <section id="features" class="features">
       <div class="container">
         <div class="section-title1">
-          <img src="./assets/img/Website assets/Bimaxpress illustration.png" alt=""> 
+          <img src="./assets/img/Website assets/Bimaxpress illustration.png" alt="">
         </div>
         <div class="section-title"><br><br>
           <h2>App Features</h2>
-          <p>BimaXpress helps one in filling thier claim effortlessly through our platform to automate the journey and enhance the customer experience of hospitals and inidividuals.</p>
+          <p>BimaXpress helps one in filling their claim effortlessly through our platform to automate the journey and enhance the customer experience of hospitals and inidividuals.</p>
         </div>
 
         <div class="row no-gutters">
@@ -263,14 +685,11 @@
               <div class="swiper-slide"><img src="assets/img/clients/2021-01-20.jpg" class="img-fluid" alt=""></div>
               <div class="swiper-slide"><img src="assets/img/clients/client1.0.jpeg" class="img-fluid" alt=""></div>
               <div class="swiper-slide"><img src="assets/img/clients/client2.jpeg" class="img-fluid" alt=""></div>
-              <div class="swiper-slide"><img src="assets/img/clients/client5.png" class="img-fluid" alt=""></div>
-              <div class="swiper-slide"><img src="assets/img/clients/client6.png" class="img-fluid" alt=""></div>
-              <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-              <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/ABM.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/unnamed.png" class="img-fluid" alt=""></div>
               <!-- <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
+            
         </div>
   
       </section><!-- End Clients Section -->
@@ -286,6 +705,9 @@
         <h2>Health Insurance Claim Reimbursement</h2>
         </div>
         <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="assets/img/Website assets/35225.svg" class="img-fluid" alt="">
+          </div>
           <div class="col-md-8 pt-5"  data-aos="fade-up">
             <h4>Fully Automated process</h4>
             <p>Download our mobile app to process your health insurance claim without even stepping out of your home.</p>
@@ -297,15 +719,16 @@
             <p>Get your documents picked up for free from ypur doorstep.</p><br>
             <li><a href="services.html" class="download-btn">Know more !</a></li>
           </div>
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="assets/img/Website assets/35225.svg" class="img-fluid" alt="">
-          </div>
+          
         </div>
        
         <div class="section-title"><br><br>
         <h2>Cashless claim assistance for hospitals</h2>
         </div>
         <div class="row content">
+          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+            <img src="assets/img/Website assets/2924718.svg" class="img-fluid" alt="">
+          </div>
           <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
             <h4>Digital Experience</h6>
               <p>Hospitals can use our platform to digitze thier claim Desk for the faster claim processing.</p>
@@ -317,9 +740,7 @@
               <p>Choose the right subscription plan which suits your need to minimize your claims processing cost and maximize benefits</p><br>
               <li><a href="services.html" class="download-btn">Know more !</a></li>
           </div>
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="assets/img/Website assets/2924718.svg" class="img-fluid" alt="">
-          </div>
+          
         </div>
 
       </div>
@@ -436,153 +857,152 @@
     
   </main><!-- End #main -->
 
-   <!-- main-footer -->
-   <footer class="main-footer alternat-2">
-    <div class="footer-top"
-        style="background-image: url(./assets/wp-content/uploads/2021/02/doctor-using-modern-computer-1.jpg);">
-        <div class="auto-container">
-            <div class="widget-section">
-                <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                        <div id="topika_about_company-1" class="footer-widget widget_topika_about_company">
-                            <!--Footer Column-->
-                            <div class="about-widget">
-                                <div class="widget-title">
-                                    <h3>About</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="text">
-                                        <p>We strive to create a better and seamless experience for individuals
-                                            in their time of need, and a streamlined experience for providers
-                                            such as Hospitals, Banks, NBFCs and Insurance Companies.</p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="widget_text col-lg-3 col-md-6 col-sm-12 footer-column">
-                        <div id="custom_html-2" class="widget_text footer-widget widget_custom_html">
-                            <div class="textwidget custom-html-widget">
-                                <div class="contact-widget">
-                                    <div class="widget-title">
-                                        <h3>Contact Us</h3>
-                                    </div>
-                                    <div class="widget-content">
-                                        <div class="text">
-                                            <p></p>
-                                        </div>
-                                        <ul class="info-list clearfix">
-                                            <li>
-                                                <i class="fa fa-map-marker"></i>
-                                                BNest, Bhopal Smart City Development Center, near Natraj Petrol
-                                                Pump, Sector A, Berkheda, Bhopal, Madhya Pradesh 462023
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-phone"></i>
-                                                Give-a-miss-call <a href="tel:07314855211">0731-4855211</a>
-                                            </li>
-                                            <li>
-                                                <i class="fa fa-envelope"></i>
-                                                <a
-                                                    href="mailto:support@bimaxpress.com">support@bimaxpress.com</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                        <div id="text-2" class="footer-widget widget_text">
-                            <div class="widget-title">
-                                <h3>Quick Links</h3>
-                            </div>
-                            <div class="textwidget">
-                                <p><a href="about-us/index.html">About Us</a></p>
-                                <p><a href="our-services/index.html">Our Services</a></p>
-                                <p><a href="blog/index.html">Blogs</a></p>
-                                <p><a href="contact/index.html">Contact Us</a></p>
-                                <p><a href="privacy-policy/index.html">Privacy Policy</a></p>
-                                <p><a href="terms-and-conditions/index.html">Terms and Conditions</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                        <div id="topika_popular_posts-1" class="footer-widget widget_topika_popular_posts">
-                            <!--Popular Posts-->
-                            <div class="sidebar-widget post-widget">
-                                <div class="widget-title">
-                                    <h3>Social Links</h3>
-                                </div>
-                                <div class="post-inner">
-
-                                    <!-- Title -->
-                                    <div class="post">
-                                       
-                                        <h4>
-                                            <a href="../bimaxpress.com/index.html">
-
-                                                <!-- Add font awesome icons -->
-                                                <a href="https://www.facebook.com/Bima-Xpress-127702352038258/"
-                                                    class="fa social fa-facebook"></a>
-                                                <a href="https://instagram.com/bimaxpress?igshid=1sozbuwga3s7t"
-                                                    class="fa social fa-instagram"></a>
-                                                <a href="https://www.linkedin.com/company/bimaxpress"
-                                                    class="fa social fa-linkedin"></a>
-                                                <a href="https://youtube.com/channel/UC6Z7rFQyxTjnyIUzo_dbnwQ"
-                                                    class="fa social fa-youtube"></a>
-
-
-                                            </a></h4>
-                                        <span class="post-date"></span>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div  class="footer-bottom">
-        <div  class="auto-container">
-            <div class="bottom-inner">
-                <div class="copyright">
-
-                    <p>&copy; 2020 <a href="#"> BimaXpress a trademark of RNLP Consulting & Technology Services Private Limited</a>. All Rights Reserved.</p>
-                
-                </div>
-                <figure class="footer-logo"><a href="index.html"><img
-                            src="./assets/wp-content/uploads/2021/01/Asset 1.png" alt="Awesome Image"></a></figure>
-                <ul class="bunny footer-nav clearfix">
-                    <li id="menu-item-1029"
-                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1029">
-                      
-                         <a title="Privacy Policy" href="privacy-policy/index.html"
-                            class="hvr-underline-from-left1" data-scroll
-                            data-options="easing: easeOutQuart">
-                           
-                            Privacy Policy
-                        </a>
-                       
-                    </li>
-                    <li id="menu-item-1028"
-                        class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1028"><a
-                            title="Terms and Conditions" href="terms-and-conditions/index.html"
-                            class="hvr-underline-from-left1" data-scroll
-                            data-options="easing: easeOutQuart">Terms and Conditions</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- main-footer end -->
-
+    <!-- main-footer -->
+    <footer class="main-footer alternat-2">
+      <div class="footer-top"
+          style="background-image: url(./assets/wp-content/uploads/2021/02/doctor-using-modern-computer-1.jpg);">
+          <div class="auto-container">
+              <div class="widget-section">
+                  <div class="row clearfix">
+                      <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                          <div id="topika_about_company-1" class="footer-widget widget_topika_about_company">
+                              <!--Footer Column-->
+                              <div class="about-widget">
+                                  <div class="widget-title">
+                                      <h3>About</h3>
+                                  </div>
+                                  <div class="widget-content">
+                                      <div class="text">
+                                          <p>We strive to create a better and seamless experience for individuals
+                                              in their time of need, and a streamlined experience for providers
+                                              such as Hospitals, Banks, NBFCs and Insurance Companies.</p>
+                                      </div>
+  
+                                  </div>
+                              </div>
+  
+                          </div>
+                      </div>
+                      <div class="widget_text col-lg-3 col-md-6 col-sm-12 footer-column">
+                          <div id="custom_html-2" class="widget_text footer-widget widget_custom_html">
+                              <div class="textwidget custom-html-widget">
+                                  <div class="contact-widget">
+                                      <div class="widget-title">
+                                          <h3>Contact Us</h3>
+                                      </div>
+                                      <div class="widget-content">
+                                          <div class="text">
+                                              <p></p>
+                                          </div>
+                                          <ul class="info-list clearfix">
+                                              <li>
+                                                  <i class="fa fa-map-marker"></i>
+                                                  BNest, Bhopal Smart City Development Center, near Natraj Petrol
+                                                  Pump, Sector A, Berkheda, Bhopal, Madhya Pradesh 462023
+                                              </li>
+                                              <li>
+                                                  <i class="fa fa-phone"></i>
+                                                  Give-a-miss-call <a href="tel:07314855211">0731-4855211</a>
+                                              </li>
+                                              <li>
+                                                  <i class="fa fa-envelope"></i>
+                                                  <a
+                                                      href="mailto:support@bimaxpress.com">support@bimaxpress.com</a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                          <div id="text-2" class="footer-widget widget_text">
+                              <div class="widget-title">
+                                  <h3>Quick Links</h3>
+                              </div>
+                              <div class="textwidget">
+                                  <p><a href="about-us/index.html">About Us</a></p>
+                                  <p><a href="our-services/index.html">Our Services</a></p>
+                                  <p><a href="blog/index.html">Blogs</a></p>
+                                  <p><a href="contact/index.html">Contact Us</a></p>
+                                  <p><a href="privacy-policy/index.html">Privacy Policy</a></p>
+                                  <p><a href="terms-and-conditions/index.html">Terms and Conditions</a></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                          <div id="topika_popular_posts-1" class="footer-widget widget_topika_popular_posts">
+                              <!--Popular Posts-->
+                              <div class="sidebar-widget post-widget">
+                                  <div class="widget-title">
+                                      <h3>Social Links</h3>
+                                  </div>
+                                  <div class="post-inner">
+  
+                                      <!-- Title -->
+                                      <div class="post">
+                                         
+                                          <h4>
+                                              <a href="../bimaxpress.com/index.html">
+  
+                                                  <!-- Add font awesome icons -->
+                                                  <a href="https://www.facebook.com/Bima-Xpress-127702352038258/"
+                                                      class="fa social fa-facebook"></a>
+                                                  <a href="https://instagram.com/bimaxpress?igshid=1sozbuwga3s7t"
+                                                      class="fa social fa-instagram"></a>
+                                                  <a href="https://www.linkedin.com/company/bimaxpress"
+                                                      class="fa social fa-linkedin"></a>
+                                                  <a href="https://youtube.com/channel/UC6Z7rFQyxTjnyIUzo_dbnwQ"
+                                                      class="fa social fa-youtube"></a>
+  
+  
+                                              </a></h4>
+                                          <span class="post-date"></span>
+                                      </div>
+  
+                                  </div>
+                              </div>
+  
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <div  class="footer-bottom">
+          <div  class="auto-container">
+              <div class="bottom-inner">
+                  <div class="copyright">
+  
+                      <p>&copy; 2020 <a href="#"> BimaXpress a trademark of RNLP Consulting & Technology Services Private Limited</a>. All Rights Reserved.</p>
+                  
+                  </div>
+                  <figure class="footer-logo"><a href="index.html"><img
+                              src="./assets/wp-content/uploads/2021/01/Asset 1.png" alt="Awesome Image"></a></figure>
+                  <ul class="bunny footer-nav clearfix">
+                      <li id="menu-item-1029"
+                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1029">
+                        
+                           <a title="Privacy Policy" href="privacy-policy/index.html"
+                              class="hvr-underline-from-left1" data-scroll
+                              data-options="easing: easeOutQuart">
+                             
+                              Privacy Policy
+                          </a>
+                         
+                      </li>
+                      <li id="menu-item-1028"
+                          class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1028"><a
+                              title="Terms and Conditions" href="terms-and-conditions/index.html"
+                              class="hvr-underline-from-left1" data-scroll
+                              data-options="easing: easeOutQuart">Terms and Conditions</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- main-footer end -->
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -608,6 +1028,38 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+
+        $(".zoom").hover(function() {
+
+            $(this).addClass('transition');
+        }, function() {
+
+            $(this).removeClass('transition');
+        });
+    });
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzp18sNywTzJMSY0_Eqp_cRNwEPM1tNclN8uJbTe6FTvGPvvvtQgr3B98zED8cZLFcc/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => window.location = ("http://www.bimaxpress.com.s3-website.ap-south-1.amazonaws.com/"))
+          .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 
